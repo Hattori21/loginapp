@@ -5,7 +5,7 @@ export const environment = {
     authDomain: "loginapp-3ac19.firebaseapp.com",
     databaseURL: "https://loginapp-3ac19.firebaseio.com",
     projectId: "loginapp-3ac19",
-    storageBucket: "",
+    storageBucket: "loginapp-3ac19.appspot.com",
     messagingSenderId: "919267921284"
   }
 };

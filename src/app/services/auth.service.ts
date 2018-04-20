@@ -29,6 +29,11 @@ export class AuthService {
   	});
   }
 
+  // Login with Google G+
+  loginGoogle(){
+     return this.afAuth.auth.signInWithPopup( new firebase.auth.GoogleAuthProvider() );
+  }
+
   // Known if user is logged
   getAuth(){
   	return this.afAuth.authState.map ( auth => auth );

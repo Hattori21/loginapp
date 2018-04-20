@@ -38,4 +38,11 @@ export class LoginComponent implements OnInit {
   	});
   }
 
+  onClickLoginGoogle(){
+    this.authService.loginGoogle()
+    .then((res) =>{
+      this.router.navigate(['/members']);
+    }).catch( err => console.log(err.message));
+  }
+
 }

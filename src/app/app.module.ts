@@ -12,6 +12,9 @@ import { LoginComponent } from './components/login/login.component';
 import { MembersComponent } from './components/members/members.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
+import { FlashMessagesModule } from 'angular2-flash-messages';
+import { FlashMessagesService } from 'angular2-flash-messages';
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
@@ -35,11 +38,13 @@ import { AuthGuard } from './guards/auth.guard';
     AppRoutingModule,
     FormsModule,
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig, 'loginapp')
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'loginapp'),
+    FlashMessagesModule
   ],
   providers: [
     AuthService,
-    AuthGuard
+    AuthGuard,
+    FlashMessagesService
   ],
   bootstrap: [AppComponent]
 })

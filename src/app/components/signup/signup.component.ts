@@ -23,9 +23,11 @@ export class SignupComponent implements OnInit {
   onSubmitAddUser(){
   	this.authService.registerUser(this.email, this.password)
   	.then((res) => {
-  		this.router.navigate(['/members'])
+  		this.router.navigate(['/members']);
+  		//console.log(res);
   	}).catch((err) => {
   		console.log(err);
+      this.router.navigate(['/login']);
   	});
   }
 

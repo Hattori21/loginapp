@@ -38,11 +38,28 @@ export class LoginComponent implements OnInit {
   	});
   }
 
+  // Login google method
   onClickLoginGoogle(){
     this.authService.loginGoogle()
     .then((res) =>{
       this.router.navigate(['/members']);
-    }).catch( err => console.log(err.message));
+    }).catch((err) => {
+      //console.log(err);
+      this.flashMessage.show(err.message, 
+      {cssClass: 'alert-danger', timout: 10000});
+    });
+  }
+
+  // Login facebook method
+  onClickLoginFacebook(){
+    this.authService.loginFacebook()
+    .then((res) =>{
+      this.router.navigate(['/members']);
+    }).catch((err) => {
+      //console.log(err);
+      this.flashMessage.show(err.message, 
+      {cssClass: 'alert-danger', timout: 10000});
+    });
   }
 
 }

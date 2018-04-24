@@ -62,4 +62,16 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  // Login twitter method
+  onClickLoginTwitter(){
+    this.authService.loginTwitter()
+    .then((res) =>{
+      this.router.navigate(['/members']);
+    }).catch((err) => {
+      //console.log(err);
+      this.flashMessage.show(err.message, 
+      {cssClass: 'alert-danger', timout: 10000});
+    });
+  }
+
 }
